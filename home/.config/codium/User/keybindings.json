@@ -1,0 +1,7 @@
+// Coloque as suas associações de teclas neste arquivo para substituir os padrões
+[
+    {
+        "key": "alt+f",
+        "command": "workbench.action.toggleMenuBar"
+    }
+]

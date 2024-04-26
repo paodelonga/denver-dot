@@ -1,0 +1,305 @@
+// This file is read-only and lives in
+//
+//    $DATA/Installed Packages/LSP-pylsp.sublime-package
+//
+// Provided you installed this package through Package Control. To modify one
+// of these settings, you should see a template file to your right where you
+// can override various key-value pairs.
+//
+// It is safe to partially override the "settings" key.
+//
+// For example, to select black as your formatter, you would put the following
+// in the *right* view:
+//
+// {
+//     "settings":
+//     {
+//         "pylsp.plugins.pylsp_black.enabled": true
+//     }
+// }
+//
+// You must then *save* the *right* view in
+// $DATA/Packages/User/LSP-pylsp.sublime-settings.
+{
+    // Defines the Python interpreter to use for creating an environment in which `pylsp` server will run.
+    // The value can be set to a binary name (like `python`, in which case a binary with that name needs to be present
+    // on the PATH) or a full path to the Python interpreter binary.
+    // When the value is `null` then it defaults to `python` on Windows and `python3` on other platforms.
+    "python_binary": null,
+    "env": {
+        // Override PYTHONPATH and MYPYPATH to extend the paths that jedi and mypy searches when looking for stub files.
+        // Paths have to be specified in two places so that both Jedi and Mypy can pick up types and stubs.
+        // Alternatively create a mypy.ini configuration file at the root of the project with `mypy_path` option set.
+        // See https://mypy.readthedocs.io/en/stable/config_file.html?highlight=mypy_path#confval-mypy_path
+        // NOTE: User overrides for "env" are not merged with default ones so override both, if needed.
+        "PYTHONPATH": "${sublime_py_files_dir}${pathsep}${packages}",
+        "MYPYPATH": "${sublime_py_files_dir}${pathsep}${packages}"
+    },
+    "settings": {
+        // --- JEDI configuration ---------------------------------------------
+        // Additional paths to extend the JEDI engine with.
+        "pylsp.plugins.jedi.extra_paths": ["$sublime_py_files_dir", "$packages"],
+        // Define environment for jedi.Script and Jedi.names.
+        // If you are using a virtual environment, specify a path to it to here. For example: "./.venv/myproject",
+        "pylsp.plugins.jedi.environment": "./.venv/",
+        // Define environment variables for jedi.Script and Jedi.names.
+        "pylsp.plugins.jedi.env_vars": null,
+        // List of module names for jedi.settings.auto_import_modules.
+        "pylsp.plugins.jedi.auto_import_modules": ["numpy"],
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_completion.enabled": true,
+        // Modules for which the labels should be cached.
+        "pylsp.plugins.jedi_completion.cache_for": ["pandas", "numpy", "tensorflow", "matplotlib"],
+        // Resolve documentation and detail eagerly.
+        "pylsp.plugins.jedi_completion.eager": true,
+        // Enable fuzzy when requesting autocomplete.
+        "pylsp.plugins.jedi_completion.fuzzy": true,
+        // Adds class objects as a separate completion item.
+        "pylsp.plugins.jedi_completion.include_class_objects": false,
+        // Adds function objects as a separate completion item.
+        "pylsp.plugins.jedi_completion.include_function_objects": false,
+        // Auto-completes methods and classes with tabstops for each parameter.
+        "pylsp.plugins.jedi_completion.include_params": true,
+        // How many labels (at most) should be resolved?
+        "pylsp.plugins.jedi_completion.resolve_at_most": 35,
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_definition.enabled": true,
+        // If follow_imports is True will decide if it follow builtin imports.
+        "pylsp.plugins.jedi_definition.follow_builtin_imports": true,
+        // Follow builtin and extension definitions to stubs.
+        "pylsp.plugins.jedi_definition.follow_builtin_definitions": true,
+        // The goto call will follow imports.
+        "pylsp.plugins.jedi_definition.follow_imports": true,
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_hover.enabled": true,
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_references.enabled": true,
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_signature_help.enabled": true,
+        // If True lists the names of all scopes instead of only the module namespace.
+        "pylsp.plugins.jedi_symbols.all_scopes": true,
+        // Enable or disable the plugin.
+        "pylsp.plugins.jedi_symbols.enabled": true,
+        // If True includes symbols imported from other libraries.
+        "pylsp.plugins.jedi_symbols.include_import_symbols": true,
+        // Builtin and c-extension modules that are allowed to be imported and inspected by rope.
+        "pylsp.rope.extensionModules": null,
+        // The name of the folder in which rope stores project configurations and data.  Pass `null` for not using such
+        // a folder at all.
+        "pylsp.rope.ropeFolder": null,
+
+        // --- Linters --------------------------------------------------------
+        // Configuration is computed first from user configuration (in home directory),
+        // overridden by configuration passed in by the language client,
+        // and then overridden by configuration discovered in the workspace.
+        //
+        // The default configuration source is pycodestyle, because the default
+        // linter is pycodestyle. If instead you want to use flake8, you must
+        // change "pylsp.configurationSources" to ["flake8"], and you must
+        // enable the flake8 plugin (see below), and you must disable the
+        // pycodestyle plugin (see below).
+        // By default, pycodestyle is enabled
+        "pylsp.configurationSources": ["pylint"],
+        "pylsp.plugins.flake8.enabled": false,
+        "pylsp.plugins.pycodestyle.enabled": false,
+        "pylsp.plugins.pydocstyle.enabled": false,
+        "pylsp.plugins.pyflakes.enabled": false,
+        "pylsp.plugins.pylint.enabled": true,
+        "pylsp.plugins.pylsp_mypy.enabled": false,
+        // When enabling, it's recommended to disable `flake8`, `pycodestyle`, `pyflakes`, `mccabe` and `pyls_isort` plugins.
+        "pylsp.plugins.ruff.enabled": false,
+
+        // --- flake8 settings ---
+        // Path to the config file that will be the authoritative config source.
+        "pylsp.plugins.flake8.config": null,
+        // Exclude files or directories which match these patterns.
+        "pylsp.plugins.flake8.exclude": null,
+        // List of errors and warnings to append to ignore list.
+        "pylsp.plugins.flake8.extendIgnore": [],
+        // Path to the flake8 executable.
+        "pylsp.plugins.flake8.executable": "flake8",
+        // When parsing directories, only check filenames matching these patterns.
+        "pylsp.plugins.flake8.filename": null,
+        // Hang closing bracket instead of matching indentation of opening bracket's line.
+        "pylsp.plugins.flake8.hangClosing": null,
+        // List of errors and warnings to ignore (or skip).
+        "pylsp.plugins.flake8.ignore": null,
+        // Maximum allowed complexity threshold.
+        "pylsp.plugins.flake8.maxComplexity": null,
+        // Set maximum allowed line length.
+        "pylsp.plugins.flake8.maxLineLength": null,
+        // Ignore errors and warnings per file.
+        // Each individual item should be in a format `file_path:error_code`. For example `"project/__init__.py:W305,W304"`.
+        "pylsp.plugins.flake8.perFileIgnores": null,
+        // Select errors and warnings.
+        "pylsp.plugins.flake8.select": null,
+
+        // --- mccabe settings ---
+        // Enable or disable the plugin.
+        "pylsp.plugins.mccabe.enabled": true,
+        // The minimum threshold that triggers warnings about cyclomatic complexity.
+        "pylsp.plugins.mccabe.threshold": 15,
+
+        // --- preload settings ---
+        // Enable or disable the plugin.
+        "pylsp.plugins.preload.enabled": true,
+        // List of modules to import on startup
+        "pylsp.plugins.preload.modules": null,
+
+        // --- pycodestyle settings ---
+        // Enable non-whitespace auto-fixes. Higher number results in more aggressive changes. For example, `E712`
+        // requires aggressiveness level 2 (since `x == True` could be changed to either `x` or `x is True`, but
+        // `autopep8` chooses the former). will also shorten lines more aggressively. Will also shorten the lines and
+        // remove trailing whitespace more aggressively.
+        "pylsp.plugins.pycodestyle.aggressive": null,
+        // Exclude files or directories which match these patterns.
+        "pylsp.plugins.pycodestyle.exclude": null,
+        // When parsing directories, only check filenames matching these patterns.
+        "pylsp.plugins.pycodestyle.filename": null,
+        // Hang closing bracket instead of matching indentation of opening bracket's line.
+        "pylsp.plugins.pycodestyle.hangClosing": null,
+        // Ignore errors and warnings.
+        "pylsp.plugins.pycodestyle.ignore": null,
+        // Set maximum allowed line length.
+        "pylsp.plugins.pycodestyle.maxLineLength": null,
+        // Select errors and warnings.
+        "pylsp.plugins.pycodestyle.select": null,
+
+        // --- pydocstyle settings ---
+        // Ignore errors and warnings in addition to the specified convention.
+        "pylsp.plugins.pydocstyle.addIgnore": null,
+        // Select errors and warnings in addition to the specified convention.
+        "pylsp.plugins.pydocstyle.addSelect": null,
+        // Choose the basic list of checked errors by specifying an existing convention.
+        // possible values: pep257, numpy, google
+        "pylsp.plugins.pydocstyle.convention": null,
+        // Ignore errors and warnings.
+        "pylsp.plugins.pydocstyle.ignore": null,
+        // Check only files that exactly match the given regular expression; default is to match files that don't start
+        // with 'test_' but end with '.py'.
+        "pylsp.plugins.pydocstyle.match": "(?!test_).*\\.py",
+        // Search only dirs that exactly match the given regular expression; default is to match dirs which do not begin
+        // with a dot.
+        "pylsp.plugins.pydocstyle.matchDir": "[^\\.].*",
+        // Select errors and warnings.
+        "pylsp.plugins.pydocstyle.select": null,
+
+        // --- pylint settings ---
+        // Arguments to pass to pylint.
+        "pylsp.plugins.pylint.args": "",
+        // Executable to run pylint with. Setting this will run pylint on unsaved files via stdin. Can slow down
+        // workflow. Only works with python3.
+        "pylsp.plugins.pylint.executable": "",
+
+        // --- pylsp_mypy settings ---
+        // Execute via `dmypy run` rather than `mypy`. This uses the `dmypy` daemon and may dramatically improve the
+        // responsiveness of the `pylsp` server, however this currently does not work in `live_mode`. Enabling this
+        // disables `live_mode`, even for conflicting configs.
+        "pylsp.plugins.pylsp_mypy.dmypy": false,
+        // Specifies which status file dmypy should use.
+        // This modifies the `--status-file` option passed to `dmypy` given `pylsp.plugins.pylsp_mypy.dmypy` is enabled.
+        "pylsp.plugins.pylsp_mypy.dmypy_status_file": ".dmypy.json",
+        // Provide type checking as you type. This writes to a tempfile every time a check is done. Turning off
+        // `live_mode` means you must save your changes for mypy diagnostics to update correctly.
+        "pylsp.plugins.pylsp_mypy.live_mode": true,
+        // Refers to the `strict` option of `mypy`. This option often is too strict to be useful.
+        "pylsp.plugins.pylsp_mypy.strict": false,
+        // Specifies a list of alternate or supplemental command-line options.
+        // This modifies the options passed to `mypy` or the mypy-specific ones passed to `dmypy run`. When present,
+        // the special boolean member `true` is replaced with the command-line options that would've been passed had
+        // `overrides` not been specified. Later options take precedence, which allows for replacing or negating
+        // individual default options (see `mypy --help | grep inverse`).
+        "pylsp.plugins.pylsp_mypy.overrides": [true],
+        // Specifies sub paths under which the mypy configuration file may be found.
+        // For each directory searched for the mypy config file, this also searches the sub paths specified here.
+        "pylsp.plugins.pylsp_mypy.config_sub_paths": [],
+        // Report basic progress to the LSP client.
+        // With this option, pylsp-mypy will report when mypy is running, given your editor supports LSP progress
+        // reporting. For small files this might produce annoying flashing in your editor, especially in with
+        // `pylsp.plugins.pylsp_mypy.live_mode`. For large projects, enabling this can be helpful to assure yourself
+        // whether mypy is still running.
+        "pylsp.plugins.pylsp_mypy.report_progress": false,
+
+        // --- ruff settings ---
+        // Note that any configuration options (except for `extendIgnore` and `extendSelect`) passed to ruff via pylsp
+        // are ignored if the project has a pyproject.toml.
+        // See also ruff documenation https://docs.astral.sh/ruff/configuration/
+        //
+        // Custom config for `ruff` to use.
+        "pylsp.plugins.ruff.path": null,
+        // Custom path to `ruff`.
+        "pylsp.plugins.ruff.executable": null,
+        // A list of rule codes or prefixes to enable. Prefixes can specify exact rules (like F841),
+        // entire categories (like F), or anything in between.
+        // When breaking ties between enabled and disabled rules (via select and ignore, respectively),
+        // more specific prefixes override less specific prefixes.
+        // See all supported rule codes at https://docs.astral.sh/ruff/rules/
+        "pylsp.plugins.ruff.select": ["E", "F"],
+        // Same as select, but append to existing error codes.
+        "pylsp.plugins.ruff.extendSelect": null,
+        // Exclude files from being checked by ruff.
+        "pylsp.plugins.ruff.exclude": null,
+        // Rules to be ignored by `ruff`.
+        "pylsp.plugins.ruff.ignore": null,
+        // Rules that are additionally ignored by `ruff`.
+        "pylsp.plugins.ruff.extendIgnore": null,
+        // Rules that are marked as fixable by `ruff` that should be fixed when running `textDocument/formatting`.
+        // The default is `["I"]`, any additional codes are appended to this list. Note that you might also want to
+        // add `"I"` in the `pylsp.plugins.ruff.extendSelect` option for import sorting to work.
+        "pylsp.plugins.ruff.format": ["I"],
+        // Line length to pass to `ruff` checking and formatting.
+        "pylsp.plugins.ruff.lineLength": null,
+        // Rules that should be ignored for specific files.
+        // A list of mappings from file pattern to rule code or prefixes to exclude, when considering any matching files.
+        "pylsp.plugins.ruff.perFileIgnores": null,
+        // Dictionary of custom severity levels for specific codes, see https://github.com/python-lsp/python-lsp-ruff#custom-severities.
+        "pylsp.plugins.ruff.severities": null,
+
+        // --- rope_autoimport settings ---
+        // Enable or disable autoimport. If false, neither completions nor code actions are enabled. If true, the
+        // respective features can be enabled or disabled individually.
+        "pylsp.plugins.rope_autoimport.enabled": false,
+        // Enable or disable autoimport completions.
+        "pylsp.plugins.rope_autoimport.completions.enabled": true,
+        // Enable or disable autoimport code actions (e.g. for quick fixes).
+        "pylsp.plugins.rope_autoimport.code_actions.enabled": true,
+
+        // Make the autoimport database memory only. Drastically increases startup time.
+        "pylsp.plugins.rope_autoimport.memory": false,
+
+        // --- rope_completion settings ---
+        // Resolve documentation and detail eagerly.
+        "pylsp.plugins.rope_completion.eager": false,
+        // Enable or disable the plugin.
+        "pylsp.plugins.rope_completion.enabled": false,
+
+        // --- Formatters -----------------------------------------------------
+        // By default, autopep8 is enabled
+        "pylsp.plugins.autopep8.enabled": false,
+        "pylsp.plugins.yapf.enabled": true,
+        "pylsp.plugins.pyls_isort.enabled": false,
+        // When enabling black, make sure that autopep8 and yapf are disabled.
+        "pylsp.plugins.black.enabled": false,
+        "pylsp.plugins.black.cache_config": false,
+        "pylsp.plugins.black.line_length": 90,
+        "pylsp.plugins.black.preview": false,
+        "pylsp.plugins.black.skip_string_normalization": false,
+        "pylsp.plugins.black.skip_magic_trailing_comma": false,
+    },
+    "command": ["$server_path"],
+    // ST4
+    "selector": "source.python",
+    // ST3
+    "languages": [
+        {
+            "languageId": "python",
+            "scopes": ["source.python"],
+            "syntaxes": ["Packages/Python/Python.sublime-syntax"],
+        },
+        {
+            "languageId": "python3",
+            "scopes": ["source.python", "source.python3"],
+            "syntaxes": ["Packages/Python/Python3.sublime-syntax"],
+        }
+    ],
+}

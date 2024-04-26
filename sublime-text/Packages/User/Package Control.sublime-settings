@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Discord Rich Presence",
+		"EditorConfig",
+		"Git",
+		"GitGutter",
+		"LanguagePortuguese",
+		"LSP",
+		"LSP-pylsp",
+		"Package Control",
+		"Python 3",
+		"SideBarEnhancements",
+		"Terminus",
+		"Theme - Freesia",
+		"TOML",
+		"WakaTime",
+	],
+}

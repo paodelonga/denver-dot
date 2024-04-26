@@ -1,0 +1,68 @@
+[user]
+	name = paodelonga
+	email = 72471292+paodelonga@users.noreply.github.com
+	signingkey = 0C3F9B4AADC8FAA6
+
+[init]
+	defaultBranch = main
+
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+
+[core]
+	editor = micro
+	fileMode = false
+	symlinks = true
+	autocrlf = false
+
+[alias]
+	dsf = diff
+	patch = !git --no-pager diff --no-color
+
+[pager]
+	dsf = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+
+[diff-so-fancy]
+	markEmptyLines = false
+	changeHunkIndicators = true
+	stripLeadingSymbols = false
+	useUnicodeRuler = false
+	first-run = false
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[safe]
+	directory = *
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

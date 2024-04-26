@@ -1,0 +1,15 @@
+! (c) 2023 Abiel M. <paodelonga@proton.me>
+
+! $Id$
+
+! load color-specific resources for clients that have them
+#ifdef COLOR
+*customization: -color
+#endif
+
+! make Xaw (Athena widget set) clients understand the delete key
+! this causes problems with some non-Xaw apps, use with care
+! *Text.translations: #override ~Shift ~Meta <Key>Delete: delete-next-character()
+
+include "/etc/X11/Xresources/custom/colors/atlantic-black"
+# include "/etc/X11/Xresources/custom/fonts"

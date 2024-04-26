@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+i3lock-fancy --font 'Maple-Mono-NF-Bold' --greyscale
