@@ -1,0 +1,21 @@
+# Sublime
+**/sublime-text/Backup/
+**/sublime-text/Lib/
+**/sublime-text/Log/
+**/sublime-text/Trash*/
+**/sublime-text/Local/Auto\ Save\ Session.sublime_session
+**/sublime-text/Local/Session.sublime_session
+**/sublime-text/**/*package_control_loader.sublime-package
+**/sublime-text/**/*.user-ca-bundle
+**/sublime-text/**/*.merged-ca-bundle
+**/sublime-text/**/*.system-ca-bundle
+**/sublime-text/**/*sublime-license
+**/sublime-text/**/WakaTime.sublime-settings
+
+# Non Specific
+**/btop.log
+**/qalc.history
+**/fish_variables
+**/micro/buffers/
+**/micro/backups/
+**/gh/hosts*
