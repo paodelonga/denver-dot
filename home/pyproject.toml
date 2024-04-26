@@ -1,0 +1,254 @@
+[project]
+name = ""
+description = ""
+authors = [
+  {name = "", email = ""}
+]
+requires-python = ">=0.0"
+license = {text = "LICENSE"}
+dynamic = ["version", "readme", "dependencies"]
+
+
+[project.urls]
+Homepage = ""
+Source = ""
+
+
+[project.optional-dependencies]
+dev = [
+  "bpython",
+  "pylint",
+  "yapf",
+  "isort",
+  "py-test",
+  # "pip-tools",
+  # "flake8",
+]
+
+
+[tool.yapf]
+ALIGN_CLOSING_BRACKET_WITH_VISUAL_INDENT = true
+ALLOW_MULTILINE_DICTIONARY_KEYS = false
+ARITHMETIC_PRECEDENCE_INDICATION = true
+BLANK_LINES_AROUND_TOP_LEVEL_DEFINITION = 2
+BLANK_LINES_BETWEEN_TOP_LEVEL_IMPORTS_AND_VARIABLES = 2
+BLANK_LINE_BEFORE_CLASS_DOCSTRING = false
+BLANK_LINE_BEFORE_MODULE_DOCSTRING = false
+DEDENT_CLOSING_BRACKETS = true
+COALESCE_BRACKETS = true
+EACH_DICT_ENTRY_ON_SEPARATE_LINE = false
+DISABLE_ENDING_COMMA_HEURISTIC = false
+SPACES_AROUND_DEFAULT_OR_NAMED_ASSIGN = false
+ALLOW_SPLIT_BEFORE_DICT_VALUE = false
+SPACES_AROUND_DICT_DELIMITERS = false
+SPACES_AROUND_LIST_DELIMITERS = false
+SPACES_AROUND_POWER_OPERATOR = true
+SPACES_AROUND_SUBSCRIPT_COLON = false
+SPACES_AROUND_TUPLE_DELIMITERS = false
+SPACES_BEFORE_COMMENT = 1
+SPLIT_ALL_COMMA_SEPARATED_VALUES = false
+SPLIT_ALL_TOP_LEVEL_COMMA_SEPARATED_VALUES = false
+SPLIT_ARGUMENTS_WHEN_COMMA_TERMINATED = false
+SPLIT_BEFORE_ARITHMETIC_OPERATOR = false
+SPLIT_BEFORE_BITWISE_OPERATOR = false
+SPLIT_BEFORE_DICT_SET_GENERATOR = true
+SPLIT_BEFORE_DOT = true
+SPLIT_COMPLEX_COMPREHENSION = true
+USE_TABS = false
+COLUMN_LIMIT = 90
+
+
+[tool.black]
+color = true
+line-length = 90
+
+
+[tool.pylint.main]
+exit-zero = true
+fail-on = true
+ignore = '[CVS]'
+ignore-patterns = '[^\.#]'
+jobs = 0
+limit-inference-results = 100
+persistent = true
+py-version = 3.9
+recursive = true
+suggestion-mode = true
+
+load-plugins = [
+  "pylint.extensions.broad_try_clause",
+  "pylint.extensions.check_elif",
+  "pylint.extensions.comparison_placement",
+  "pylint.extensions.confusing_elif",
+  "pylint.extensions.consider_refactoring_into_while_condition",
+  "pylint.extensions.consider_ternary_expression",
+  "pylint.extensions.for_any_all",
+  "pylint.extensions.bad_builtin",
+  "pylint.extensions.dict_init_mutate",
+  "pylint.extensions.docparams",
+  "pylint.extensions.dunder",
+  "pylint.extensions.empty_comment",
+  "pylint.extensions.magic_value",
+  "pylint.extensions.mccabe",
+  "pylint.extensions.no_self_use",
+  "pylint.extensions.overlapping_exceptions",
+  "pylint.extensions.private_import",
+  "pylint.extensions.redefined_loop_name",
+  "pylint.extensions.redefined_variable_type",
+  "pylint.extensions.while_used"
+]
+
+
+[tool.pylint.parameter_documentation]
+accept-no-param-doc = true
+accept-no-raise-doc = true
+accept-no-return-doc = true
+accept-no-yields-doc = true
+default-docstring-type = "google" # sphinx
+
+
+[tool.pylint.deprecated_builtins]
+bad-functions = ["map", "filter", "apply", "reduce"]
+
+
+[tool.pylint.basic]
+argument-naming-style = "snake_case"
+attr-naming-style = "snake_case"
+bad-names = ["foo", "bar", "baz", "var"]
+class-attribute-naming-style = "any"
+class-const-naming-style = "UPPER_CASE"
+class-naming-style = "PascalCase"
+const-naming-style = "UPPER_CASE"
+docstring-min-length = -1
+function-naming-style = "snake_case"
+good-names = ["Run", "_"]
+include-naming-hint = true
+inlinevar-naming-style = "any"
+method-naming-style = "snake_case"
+module-naming-style = "snake_case"
+no-docstring-rgx = "^_"
+property-classes = ["abc.abstractproperty"]
+variable-naming-style = "snake_case"
+
+
+[tool.pylint.classes]
+check-protected-access-in-special-methods = true
+defining-attr-methods = ["__init__", "__new__", "setUp", "asyncSetUp", "__post_init__"]
+exclude-protected = ["_asdict", "_fields", "_replace", "_source", "_make", "os._exit"]
+valid-classmethod-first-arg = ["cls"]
+valid-metaclass-classmethod-first-arg = ["mcs"]
+
+
+[tool.pylint.design]
+max-args = 8
+max-attributes = 6
+max-bool-expr = 5
+max-branches = 12
+max-locals = 16
+max-parents = 8
+max-public-methods = 24
+max-returns = 6
+max-statements = 32
+min-public-methods = -1
+
+
+[tool.pylint.exceptions]
+overgeneral-exceptions = ["builtins.BaseException", "builtins.Exception"]
+
+
+[tool.pylint.format]
+ignore-long-lines = '^\s*(# )?<?https?://\S+>?$'
+indent-after-paren = 4
+indent-string = "    "
+max-line-length = 90
+max-module-lines = 800
+single-line-class-stmt = false
+single-line-if-stmt = true
+
+
+[tool.pylint.imports]
+# deprecated-modules = map
+known-third-party = ["enchant"]
+# preferred-modules = map
+
+
+[tool.pylint.logging]
+logging-format-style = "new"
+logging-modules = ["logging"]
+
+
+[tool.pylint."messages control"]
+confidence = [
+  "HIGH",
+  "CONTROL_FLOW",
+  "INFERENCE",
+  "INFERENCE_FAILURE",
+  "UNDEFINED"
+]
+disable = [
+  "raw-checker-failed",
+  "bad-inline-option",
+  "locally-disabled",
+  "file-ignored",
+  "suppressed-message",
+  "useless-suppression",
+  "deprecated-pragma",
+  "use-symbolic-message-instead",
+  "use-implicit-booleaness-not-comparison-to-string",
+  "use-implicit-booleaness-not-comparison-to-zero",
+  "C0103"
+]
+
+
+[tool.pylint.method_args]
+timeout-methods = ["requests.api.delete", "requests.api.get", "requests.api.head", "requests.api.options", "requests.api.patch", "requests.api.post", "requests.api.put", "requests.api.request"]
+
+
+[tool.pylint.miscellaneous]
+notes = ["FIXME", "XXX", "TODO", "WIP", "NOTE", "TIP", "WARN"]
+
+
+[tool.pylint.refactoring]
+max-nested-blocks = 6
+never-returning-functions = ["sys.exit", "argparse.parse_error"]
+suggest-join-with-non-empty-separator = true
+
+
+[tool.pylint.reports]
+evaluation = "max(0, 0 if fatal else 10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10))"
+score = true
+
+
+[tool.pylint.similarities]
+ignore-comments = true
+ignore-docstrings = true
+ignore-imports = false
+ignore-signatures = true
+min-similarity-lines = 4
+
+
+[tool.pylint.spelling]
+max-spelling-suggestions = 4
+# spelling-dict = path
+spelling-ignore-comment-directives = "fmt: on,fmt: off,noqa:,noqa,nosec,isort:skip,mypy:"
+
+
+[tool.pylint.typecheck]
+contextmanager-decorators = ["contextlib.contextmanager"]
+ignored-checks-for-mixins = ["no-member", "not-async-context-manager", "not-context-manager", "attribute-defined-outside-init"]
+ignored-classes = ["optparse.Values", "thread._local", "_thread._local", "argparse.Namespace"]
+ignore-none = true
+ignore-on-opaque-inference = true
+missing-member-hint-distance = 1
+missing-member-hint = true
+missing-member-max-choices = 1
+mixin-class-rgx = ".*[Mm]ixin"
+
+
+[tool.pylint.variables]
+allow-global-unused-variables = false
+callbacks = ["cb_", "_cb"]
+dummy-variables-rgx = "_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_"
+ignored-argument-names = "_.*|^ignored_|^unused_"
+init-import = true
+redefining-builtins-modules = ["six.moves", "past.builtins", "future.builtins", "builtins", "io"]

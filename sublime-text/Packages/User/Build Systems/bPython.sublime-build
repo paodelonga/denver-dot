@@ -1,0 +1,8 @@
+{
+    "working_dir": "$folder",
+    "target": "toggle_terminus_panel",
+    "cancel": "terminus_cancel_build",
+    "cmd": ["bpython", "$file", "ARG1"],
+    "auto_close": false,
+    "timeit": true
+}

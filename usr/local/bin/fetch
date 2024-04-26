@@ -1,0 +1,19 @@
+#!/bin/bash
+
+accent='\033[0;36m'
+reset='\033[0;0m'
+
+. /etc/os-release
+ # Welcome to ${accent}$(hostname)${reset}
+ # ${accent} :${reset} Alacritty
+echo -e """
+ ${accent} :${reset} $USER@$(hostname -f)
+ ${accent}󱧥 :${reset} $(uptime -p)
+ ${accent}󱛁 :${reset} $(hostname -I | cut -d ' ' -f 1)
+"""
+ # ${accent} :${reset} $PRETTY_NAME $(uname -m)
+ # ${accent} :${reset} $(uname -r)
+ # ${accent}$ :${reset} $SHELL
+ # ${accent}󰏖 :${reset} $(dpkg --list | tail +6 | wc -l) (dpkg)
+ # ${accent} :${reset} $(echo $DISPLAY)
+ # ${accent} :${reset} Awesome WM

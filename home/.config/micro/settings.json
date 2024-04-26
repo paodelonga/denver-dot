@@ -1,0 +1,49 @@
+{
+    "*.editorconfig": {
+        "filetype": "ini"
+    },
+    "*.ino": {
+        "filetype": "c++"
+    },
+    "*.rasi": {
+        "commenttype": "/* %s */"
+    },
+    "ToggleHighlightSearch": "true",
+    "autoclose": false,
+    "autosu": true,
+    "colorscheme": "simple",
+    "diffgutter": true,
+    "fastdirty": true,
+    "ft:makefile": {
+        "tabtospaces": false
+    },
+    "ft:yaml": {
+        "rmtrailingws": false
+    },
+    "hlsearch": true,
+    "hltaberrors": true,
+    "hltrailingws": true,
+    "indentchar": "",
+    "initlua": true,
+    "keepautoindent": true,
+    "lsp.autocompleteDetails": true,
+    "lsp.ignoreTriggerCharacters": "completion,signature",
+    "lsp.server": "python=pylsp",
+    "matchbracestyle": "highlight",
+    "mkparents": true,
+    "parsecursor": true,
+    "pluginchannels": [
+        "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
+    ],
+    "pluginrepos": [],
+    "rmtrailingws": true,
+    "savecursor": true,
+    "saveundo": true,
+    "scrollbar": true,
+    "scrollspeed": 6,
+    "statusformatl": "$(filename) | $(opt:filetype) | $(opt:fileformat) | $(opt:encoding) | [$(line):$(col):$(lines):$(percentage)] $(modified)",
+    "statusformatr": "",
+    "tabhighlight": true,
+    "tabmovement": true,
+    "tabstospaces": true
+}
