@@ -1,0 +1,40 @@
+noremap f h
+noremap a j
+noremap ; k
+noremap j l
+inoremap cm <Esc>
+
+syntax on
+set smarttab
+set autoindent
+set expandtab
+set backspace=2
+
+set shiftwidth=4
+set tabstop=4
+
+filetype indent on
+filetype plugin on
+
+set relativenumber
+set ignorecase
+set smartcase
+set autoread
+set hlsearch
+set showmatch
+set encoding=utf8
+set ffs=unix,dos,mac
+
+set backup
+set undofile
+
+set history=1200
+set undolevels=1000
+set undoreload=8000
+
+set undodir=$HOME/.vim/tmp/undo
+set backupdir=$HOME/.vim/tmp/backup
+set directory=$HOME/.vim/tmp/swap
+
+nnoremap <Leader>ev :tabnew<CR>:e $HOME/.vimrc<CR>
+nnoremap <Leader><Leader> :w<CR>
