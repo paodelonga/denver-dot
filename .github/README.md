@@ -43,4 +43,7 @@ curl -fsSL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/in
 curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh | sh
 ```
 
----
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
