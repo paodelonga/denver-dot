@@ -1,7 +1,6 @@
 <!-- patodavida :duck: -->
 
 <div align="center">
-<img src="./banners/cat.svg" title="Banner" alt="a cat balancing on a straight rope" width="82%">
 
 # Denver
 
@@ -46,4 +45,8 @@ curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/in
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+<div align="center">
+<img src="./banners/cat.svg" title="Banner" alt="a cat balancing on a straight rope" width="82%">
+</div>
 
