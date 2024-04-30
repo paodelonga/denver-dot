@@ -5,13 +5,16 @@
 	],
 	"installed_packages":
 	[
+		"Color Highlighter",
 		"Discord Rich Presence",
 		"EditorConfig",
 		"Git",
 		"GitGutter",
+		"Json Colors And Navigation",
 		"LanguagePortuguese",
 		"LSP",
 		"LSP-pylsp",
+		"MarkdownPreview",
 		"Package Control",
 		"Python 3",
 		"SideBarEnhancements",
