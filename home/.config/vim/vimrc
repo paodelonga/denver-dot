@@ -1,9 +1,3 @@
-noremap f h
-noremap a j
-noremap ; k
-noremap j l
-inoremap cm <Esc>
-
 syntax on
 set smarttab
 set autoindent
@@ -16,7 +10,7 @@ set tabstop=4
 filetype indent on
 filetype plugin on
 
-set relativenumber
+set number relativenumber
 set ignorecase
 set smartcase
 set autoread
@@ -32,9 +26,11 @@ set history=1200
 set undolevels=1000
 set undoreload=8000
 
-set undodir=$HOME/.vim/tmp/undo
-set backupdir=$HOME/.vim/tmp/backup
-set directory=$HOME/.vim/tmp/swap
+set undodir=$HOME/.local/share/vim/undo
+set backupdir=$HOME/.local/share/vim/backup
+set directory=$HOME/.local/share/vim/swap
 
-nnoremap <Leader>ev :tabnew<CR>:e $HOME/.vimrc<CR>
-nnoremap <Leader><Leader> :w<CR>
+nnoremap <Leader><Leader>ev :tabnew<CR>:e $HOME/.config/vim/vimrc<CR>
+nnoremap <Leader><Leader>w :w<CR>
+nnoremap <Leader><Leader>wq :wq<CR>
+nnoremap <Leader><Leader>q :q<CR>
