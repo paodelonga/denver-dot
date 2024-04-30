@@ -4,13 +4,10 @@
 
 # Denver
 
-maybe that looks like a "rice", but it's not.
-
 this repository is not intended to be a showcase for my customizations or anything like that.<br>
 it's just a repository that i'm going to use (if i keep it) with some of<br>
 the configurations that i use on a daily basis in my linux environment.
 
-_let's just say i'm going to make an effort not to add anything related to graphic environments here._
 </div>
 
 ---
