@@ -1,0 +1,6 @@
+action = copy
+skin-tone = neutral
+selector = rofi
+keybinding-copy = Alt-c
+keybinding-type = Alt-t
+keybinding-clipboard = Ctrl-c

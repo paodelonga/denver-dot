@@ -1,0 +1,27 @@
+/*
+  *************************************
+ *           Minimal Black             *
+ *       Maintener: Paodelonga         *
+ * Hosting: github@paodelonga/dotfiles *
+  *************************************
+
+*/
+@theme "themes/minimal/theme.rasi"
+
+configuration {
+  modes: "drun,run,window,ssh,calc,keys";
+  terminal: "alacritty";
+  hover-select: true;
+  scroll-method: 0;
+  auto-select: false;
+  steal-focus: false;
+  sidebar-mode: false;
+  disable-history: true;
+  cycle: false;
+  sort: true;
+  drun-match-fields: "name,generic,exec,categories,keywords";
+  timeout {
+      action: "kb-cancel";
+      delay:  5;
+  }
+}

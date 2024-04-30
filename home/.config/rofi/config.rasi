@@ -1,0 +1,10 @@
+/*
+  *************************************
+ *         Rofi Configuration          *
+ *       Maintener: Paodelonga         *
+ * Hosting: github@paodelonga/dotfiles *
+  *************************************
+*/
+
+@import "themes/atlantic-black/config.rasi"
+/* @import "themes/minimal/config.rasi" */
