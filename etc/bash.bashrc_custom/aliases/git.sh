@@ -11,7 +11,7 @@ alias gbl="git branch --list"
 alias gbc="git branch --copy"
 alias gbm="git branch --move"
 alias gbd="git branch --delete"
-alias gbnmp='echo "<group>.<subject>.<"(uuid -v4 | cut -d \'-\' -f -1)"|commit_tag>.[username]"'
+alias gbnmp='echo "<group>.<subject>.<$(uuid -v6 | cut -d '-' -f -1)|commit_tag>.[username]""'
 
 alias gf="git fetch"
 alias gfa="git fetch --all"
