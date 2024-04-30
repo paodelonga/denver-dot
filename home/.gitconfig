@@ -14,7 +14,7 @@
 
 [core]
 	editor = micro
-	fileMode = false
+	filemode = false
 	symlinks = true
 	autocrlf = false
 
@@ -60,9 +60,9 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
