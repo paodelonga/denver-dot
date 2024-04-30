@@ -277,7 +277,7 @@
         // By default, autopep8 is enabled
         "pylsp.plugins.autopep8.enabled": false,
         "pylsp.plugins.yapf.enabled": true,
-        "pylsp.plugins.pyls_isort.enabled": false,
+        "pylsp.plugins.pyls_isort.enabled": true,
         // When enabling black, make sure that autopep8 and yapf are disabled.
         "pylsp.plugins.black.enabled": false,
         "pylsp.plugins.black.cache_config": false,
