@@ -5,6 +5,8 @@
 **/sublime-text/Trash*/
 **/sublime-text/Local/Auto\ Save\ Session.sublime_session
 **/sublime-text/Local/Session.sublime_session
+**/sublime-text/Packages/User/Color\ Highlighter/ColorPicker/
+**/sublime-text/Packages/User/Color\ Highlighter/icons/
 **/sublime-text/**/*package_control_loader.sublime-package
 **/sublime-text/**/*.user-ca-bundle
 **/sublime-text/**/*.merged-ca-bundle
