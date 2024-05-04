@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"AutoFileName",
 		"Color Highlighter",
 		"DoxyDoxygen",
 		"EditorConfig",
