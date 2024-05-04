@@ -60,8 +60,12 @@ alias cal6="cal -n 6"
 alias caly="cal -y"
 
 alias suuid4="uuid -v4 | cut -d '-' -f -1"
+
+alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias nvc='NVIM_APPNAME="nvim-venci" nvim'
+alias nv="nvim"
+
 alias dk="docker"
 alias lz="lazygit"
-alias nv="nvim"
 alias src="omf reload"
 alias fish_priv="fish --private"
