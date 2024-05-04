@@ -111,7 +111,7 @@ local utilities = {
 
 -- Default application for each category
 web_browser.gui = web_browser.firefox
-file_manager.gui = file_manager.pcmanfm
+file_manager.gui = file_manager.thunar
 file_manager.terminal = file_manager.ranger
 editor.gui = editor.subl
 editor.terminal = editor.micro
