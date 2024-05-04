@@ -82,6 +82,7 @@ export PAGER="cat"
 PATH="${PATH:+${PATH}:}/usr/sbin/"
 PATH="${PATH:+${PATH}:}/usr/local/sbin"
 PATH="${PATH:+${PATH}:}/usr/local/bin"
+PATH="${PATH:+${PATH}:}/usr/local/go/bin"
 
 # Set GPG_TTY to current terminal
 export GPG_TTY=(tty)
