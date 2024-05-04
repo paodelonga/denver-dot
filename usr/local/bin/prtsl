@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+scrot "$HOME/Pictures/Screenshots/Screenshot_from_%Y-%m-%d_%H-%M-%S.png" --pointer --freeze --quality 100 --border --select --exec 'xclip -selection clipboard -t image/png -i $f'
