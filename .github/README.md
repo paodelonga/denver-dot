@@ -43,6 +43,13 @@ curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/in
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+> [!NOTE]
+> In certain Debian installations, there may be an issue where executing `localectl list-keymaps`
+> doesn't yield any results. In such instances, the solution is download the latest
+> `kbd` package from a [mirror](https://mirrors.edge.kernel.org/pub/linux/utils/kbd/),
+> extracting it, and then copying `kbd/data/keymaps` to `/usr/share/kbd/`.
+
+
 <div align="center">
 <img src="./banners/cat.svg" title="Banner" alt="a cat balancing on a straight rope" width="82%">
 </div>
