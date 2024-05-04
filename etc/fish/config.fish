@@ -9,4 +9,5 @@ if status is-interactive
     set PATH "$PATH:/usr/sbin/"
     set PATH "$PATH:/usr/local/sbin"
     set PATH "$PATH:/usr/local/bin"
+    set PATH "$PATH:/usr/local/go/bin"
 end
