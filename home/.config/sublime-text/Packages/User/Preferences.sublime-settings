@@ -65,7 +65,7 @@
 		"*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb",
 		"*.idb", ".DS_Store", ".directory", "*.class", "*.psd", "*.db"
 	],
-	"relative_line_numbers": false, // Soon
+	"relative_line_numbers": true, // Soon
 	// "vintage_start_in_command_mode": false,
 	// "vintage_ctrl_keys": false,
 	"index_files": false,
