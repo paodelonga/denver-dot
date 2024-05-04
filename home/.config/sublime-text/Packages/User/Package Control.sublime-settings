@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"Color Highlighter",
-		"Discord Rich Presence",
 		"EditorConfig",
 		"Git",
 		"GitGutter",
