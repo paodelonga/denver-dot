@@ -14,4 +14,45 @@
         }
     },
   { "keys": ["ctrl+b"], "command": "build" },
+
+
+  // Tabs
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+  { "keys": ["ctrl+shift+pageup"], "command": "move_tab", "args": { "position": "-1" } },
+  { "keys": ["ctrl+shift+pagedown"], "command": "move_tab", "args": { "position": "+1" } },
+
+  { "keys": ["ctrl+shift+2", "ctrl+shift+pageup"], "command": "move_tab", "args": { "position": "-2" } },
+  { "keys": ["ctrl+shift+2", "ctrl+shift+pagedown"], "command": "move_tab", "args": { "position": "+2" } },
+
+  { "keys": ["ctrl+shift+4", "ctrl+shift+pageup"], "command": "move_tab", "args": { "position": "-4" } },
+  { "keys": ["ctrl+shift+4", "ctrl+shift+pagedown"], "command": "move_tab", "args": { "position": "+4" } },
+
+  { "keys": ["ctrl+pagedown"], "command": "next_view", "args": {"extend": true} },
+  { "keys": ["ctrl+pageup"], "command": "prev_view", "args": {"extend": true} },
+
+  // Groups/Panels
+  { "keys": ["alt+pageup"], "command": "focus_neighboring_group", "args": { "forward": false } },
+  { "keys": ["alt+pagedown"], "command": "focus_neighboring_group", "args": { "forward": true } },
+  { "keys": ["ctrl+alt+pageup"], "command": "move_to_neighboring_group", "args": {"forward": false } },
+  { "keys": ["ctrl+alt+pagedown"], "command": "move_to_neighboring_group", "args": {"forward": true }  },
+
+
+  // Motions
+  { "keys": ["home"], "command": "move_to", "args": { "to": "bol", "extend": false } },
+  { "keys": ["end"], "command": "move_to", "args": { "to": "eol", "extend": false } },
+
+  { "keys": ["ctrl+up"], "command": "scroll_lines", "args": { "amount": 1.0 } },
+  { "keys": ["ctrl+down"], "command": "scroll_lines", "args": { "amount": -1.0 } },
+
+  { "keys": ["ctrl+2", "ctrl+up"], "command": "scroll_lines", "args": { "a mount": 2.0 } },
+  { "keys": ["ctrl+2", "ctrl+down"], "command": "scroll_lines", "args": { "amount": -2.0 } },
+
+  { "keys": ["ctrl+4", "ctrl+up"], "command": "scroll_lines", "args": { "amount": 4.0 } },
+  { "keys": ["ctrl+4", "ctrl+down"], "command": "scroll_lines", "args": { "amount": -4.0 } },
+
+  { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
+  { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
+
  ]
