@@ -5,9 +5,8 @@
   { "keys": ["ctrl+b"], "command": "build" },
 
 
-  // Toggle the default shell in panel
+  // PKG: Terminus
   { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
-    // Open a terminal tab at current file directory
     {
         "keys": ["ctrl+alt+t"], "command": "terminus_open", "args": {
             "cwd": "${file_path:${folder}}",
