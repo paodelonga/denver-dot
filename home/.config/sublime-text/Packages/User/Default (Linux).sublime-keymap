@@ -1,6 +1,9 @@
 [
-	{ "keys": ["context_menu"], "command": "context_menu" },
-	{ "keys": ["alt+f", "ctrl+f"], "command": "toggle_menu" },
+	// General
+  { "keys": ["context_menu"], "command": "context_menu" },
+	{ "keys": ["ctrl+f", "alt+f"], "command": "toggle_menu" },
+  { "keys": ["ctrl+b"], "command": "build" },
+
 
   // Toggle the default shell in panel
   { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
