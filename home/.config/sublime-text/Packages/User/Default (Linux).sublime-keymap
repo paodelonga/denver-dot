@@ -13,7 +13,6 @@
             "show_in_panel": true
         }
     },
-  { "keys": ["ctrl+b"], "command": "build" },
 
 
   // Tabs
