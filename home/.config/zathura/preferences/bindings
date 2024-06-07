@@ -1,0 +1,24 @@
+map g goto
+map G goto top
+map <C-g> goto bottom
+
+map <A-r> feedkeys ":source :<Return>"
+map r reload
+map R rotate
+map i recolor
+
+map n toggle_statusbar
+
+map l zoom in
+map h zoom out
+
+map K scroll half-up
+map J scroll half-down
+
+map F2 focus_inputbar ":exec bmark"
+map F1 focus_inputbar ":exec blist"
+map F3 focus_inputbar ":exec bdelete"
+
+map <C-n> feedkeys ":exec zanotate $FILE<Return>"
+map Tab toggle_page_mode
+map p print

@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+_CONFIG_DIR="$HOME/.config/zathura"
+_DATA_DIR="$_CONFIG_DIR/data"
+
+/usr/bin/zathura --config-dir "$_CONFIG_DIR" --data-dir "$_DATA_DIR" "$@"

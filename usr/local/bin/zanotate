@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+# I found this script in a Reddit thread, but
+# unfortunately I couldn't find the author anymore.
+# If anyone does find it, please let me know so that
+# so that I can give due credit.
+
+# Edit: I found the source, it's in this thread
+# https://reddit.com/r/unixporn/comments/hcy5p7/bspwm_taking_notes_in_zathura/
+
+# To use this script with Zathura you will need
+# that you add the following bind to your zathurarc
+# `map <C-n> feedkeys ":exec zanotate $FILE<Return>"`
+ 
+NOTES_FOLDER="$HOME/Documents/Zanotate"
+JSON_DB="$NOTES_FOLDER/books.yml"
+
+if ! [[ -r $NOTES_FOLDER ]]; then
+  mkdir $NOTES_FOLDER
+  echo -e "Creating notes folder at $NOTES_FOLDER"
+fi
+
+function exists_or_create() {
+    if [[ -f "$2" ]]; then
+        echo "Not Creating the note: File is already there"
+    else
+        echo -e "$1 \n$2"
+        echo -e "Book: $1 \n---" > "$2"
+        cat <<EOF >> $JSON_DB
+  - book: "$1"
+    hash: "$(basename $2)"
+    date: "$(date '+%d/%m/%Y %H:%M:%S')"
+EOF
+    fi
+}
+
+function add_annotation() {
+    xclip -out -selection clipboard >> "$1"
+    echo -e "\n> <!!>\n\n" >> $1
+}
+
+
+hashed_filename="$NOTES_FOLDER/$(md5sum "$1" | cut -f1 -d' ').md"
+filename=$(basename "$@")
+
+
+exists_or_create "$filename" "$hashed_filename"
+add_annotation "$hashed_filename"

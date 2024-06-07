@@ -1,0 +1,20 @@
+# Load theme
+include themes/atlantic-black
+
+# Load keybindings
+include preferences/bindings
+
+# General
+set window-title-home-tilde true
+set selection-clipboard clipboard
+
+# Status bar
+set statusbar-home-tilde true
+set statusbar-basename false
+
+# Page
+set page-padding 1
+
+# Startup
+set adjust-open width
+set recolor true

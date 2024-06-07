@@ -1,0 +1,45 @@
+# https://github.com/paodelonga
+# Atlantic-Black Coloscheme
+
+set font                      "Maple Mono NF 8"
+set default-fg                "#D8D8D8"
+set default-bg 			          rgba(12,12,12,0.25)
+
+set completion-bg		          "#232323"
+set completion-fg		          "#D8D8D8"
+set completion-highlight-bg	  "#3E4140"
+set completion-highlight-fg	  "#D8D8D8"
+set completion-group-bg		    "#232323"
+set completion-group-fg		    "#89B4FA"
+
+set statusbar-fg		          "#D8D8D8"
+set statusbar-bg		          "#232323"
+
+set notification-bg		        "#232323"
+set notification-fg		        "#D8D8D8"
+set notification-error-fg	    "#D8D8D8"
+set notification-error-bg	    "#662929"
+set notification-warning-fg	  "#D8D8D8"
+set notification-warning-bg	  "#284C66"
+
+set inputbar-fg			          "#D8D8D8"
+set inputbar-bg 		          "#232323"
+
+set recolor-lightcolor		    rgba(12,12,12,0.25)
+set recolor-darkcolor		      "#D8D8D8"
+
+set index-fg			            "#D8D8D8"
+set index-bg			            "#1E1E1E"
+set index-active-fg		        "#D8D8D8"
+set index-active-bg		        "#232323"
+
+set render-loading-fg		      "#D8D8D8"
+set render-loading-bg		      "#1E1E1E"
+
+set highlight-color		        "#3E4140"
+set highlight-fg              "#F5C2E7"
+set highlight-active-color	  "#F5C2E7"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "true"
