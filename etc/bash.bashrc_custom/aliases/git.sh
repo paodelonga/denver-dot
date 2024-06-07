@@ -1,5 +1,8 @@
 alias gst="git status"
 alias ga="git add"
+alias gai="git add -i"
+alias gae="git add -e"
+alias gap="git add -p"
 alias gdf="git diff"
 alias gdsf="git dsf"
 alias gps="git push"
@@ -11,7 +14,7 @@ alias gbl="git branch --list"
 alias gbc="git branch --copy"
 alias gbm="git branch --move"
 alias gbd="git branch --delete"
-alias gbnmp='echo "<group>.<subject>.<$(uuid -v6 | cut -d '-' -f -1)|commit_tag>.[username]""'
+alias gbnmp='echo "<group>.<subject>.<$(uuidgen -r | cut -d '-' -f -1)|commit_tag>.[username]"'
 
 alias gf="git fetch"
 alias gfa="git fetch --all"
@@ -21,7 +24,8 @@ alias gfap="git fetch --all --prune"
 alias gc="git commit"
 alias gcm="git commit -m"
 
-alias gres="git reset HEAD~1 --soft"
+alias gchku="git reset HEAD~1 --mixed"
+alias gchkc="git commit -m 'checkpoint: $(uuidgen -r)'"
 
 alias gsw="git switch"
 alias gswc="git switch -c"
