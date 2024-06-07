@@ -1,12 +1,11 @@
-<!-- patodavida :duck: -->
+'<!-- patodavida :duck: -->
 
 <div align="center">
 
-# Denver
+# devel enviroment dotfiles
 
-this repository is not intended to be a showcase for my customizations or anything like that.<br>
 it's just a repository that i'm going to use (if i keep it) with some of<br>
-the configurations that i use on a daily basis in my linux environment.
+configurations that i use in my daily linux environment.
 
 </div>
 
@@ -29,7 +28,7 @@ the configurations that i use on a daily basis in my linux environment.
 
 ---
 
-### Extras
+### extras
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | sh
@@ -40,7 +39,7 @@ curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/in
 ```
 
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -fsSL https://sh.rustup.rs | sh
 ```
 
 ---
