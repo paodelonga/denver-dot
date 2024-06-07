@@ -1,0 +1,8 @@
+# see the public domain above for more information
+# https://www.freedesktop.org/software/systemd/man/latest/machine-info.html
+
+PRETTY_HOSTNAME=""
+ICON_NAME=computer-laptop
+CHASSIS=laptop
+DEPLOYMENT="production"
+LOCATION=""
