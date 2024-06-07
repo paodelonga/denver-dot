@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+test "$1" = "off" && pkill oneko --signal 9 || oneko -tora -bg "#9a9a9a"

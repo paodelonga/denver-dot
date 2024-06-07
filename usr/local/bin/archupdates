@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+update_count="$(paru -Syup | tail -n +5 | wc -l)"
+# notify-send "System" "Has $update_count pending packages to update." -u normal -e
+echo -e "Has $update_count pending packages to update."
