@@ -53,9 +53,7 @@ see the [NOTES](./notes.md) for some crucial notes
 
 ### TODO
 
-See TODO [here](./TODO.md)
-
-
+see [TODO](./todo.md) for tasks to be done
 
 <div align="center">
 <img src="./banners/cat.svg" title="Banner" alt="a cat balancing on a straight rope" width="82%">
