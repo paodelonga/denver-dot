@@ -14,13 +14,45 @@
 
 [core]
 	editor = micro
-	filemode = false
 	symlinks = true
 	autocrlf = false
 
 [alias]
 	dsf = diff
 	patch = !git --no-pager diff --no-color
+	gst = !git status
+	ga = !git add
+	gai = !git add -i
+	gae = !git add -e
+	gap = !git add -p
+	gdf = !git diff
+	gdsf = !git dsf
+	gps = !git push
+	gpl = !git pull
+
+	gb = !git branch
+	gba = !git branch --all
+	gbl = !git branch --list
+	gbc = !git branch --copy
+	gbm = !git branch --move
+	gbd = !git branch --delete
+	gbnmp = !echo "<group>.<subject>.<$(uuidgen -r | cut -d '-' -f -1)|commit_tag>.[username]"
+
+	gf = !git fetch
+	gfa = !git fetch --all
+	gfp = !git fetch --prune
+	gfap = !git fetch --all --prune
+
+	gc = !git commit
+	gcm = !git commit -m
+
+	gchku = !git reset HEAD~1 --mixed
+	gchkc = !git commit -m 'checkpoint: $(uuidgen -r)'
+
+	gsw = !git switch
+	gswc = !git switch -c
+	gswo = !git switch --orphan
+
 
 [pager]
 	dsf = diff-so-fancy | less --tabs=4 -RFX
@@ -66,3 +98,8 @@
 
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

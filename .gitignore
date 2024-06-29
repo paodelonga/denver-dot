@@ -14,6 +14,7 @@
 **/sublime-text/**/*.system-ca-bundle
 **/sublime-text/**/*sublime-license
 **/sublime-text/**/WakaTime.sublime-settings
+**/sublime-text/Packages/WakaTime/
 
 # Non Specific
 **/btop.log

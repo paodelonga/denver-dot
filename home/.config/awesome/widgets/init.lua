@@ -9,7 +9,7 @@ https://github.com/paodelonga/awesome-wm-widgets
 
 return {
     -- spotify_bar = require("widgets.spotify_bar"),
-    -- pavol = require("widgets.pavol"),
+    pavol = require("widgets.pavol"),
     xkb_indicator = require("widgets.xkb_indicator"),
     ffretray = require("widgets.ffretray"),
     -- whoip = require("widgets.whoip"),

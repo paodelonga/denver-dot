@@ -116,43 +116,15 @@ theme.widgets.hotkeys_popup = require("awful.hotkeys_popup").widget.new({
 -- 	},
 -- })
 
--- theme.widgets.volume = lain.widget.alsa({
--- 	timeout = 10,
--- 	settings = function()
--- 		widget:buttons(awful.util.table.join(
--- 			awful.button({}, 4, function()
--- 				os.execute(string.format("pamixer --increase 1", theme.widgets.volume.channel))
--- 				theme.widgets.volume.update()
--- 			end),
---
--- 			awful.button({}, 5, function()
--- 				os.execute(string.format("pamixer --decrease 1", theme.widgets.volume.channel))
--- 				theme.widgets.volume.update()
--- 			end),
---
--- 			awful.button({}, 1, function()
--- 				if
--- 					tonumber(volume_now.level) == 0
--- 					or tonumber(volume_now.level) > 50 and tonumber(volume_now.level) < 100
--- 				then
--- 					os.execute(string.format("pamixer --set-volume 100", theme.widgets.volume.channel))
--- 					theme.widgets.volume.update()
--- 				elseif
--- 					tonumber(volume_now.level) == 100
--- 					or tonumber(volume_now.level) < 50 and tonumber(volume_now.level) > 0
--- 				then
--- 					os.execute(string.format("pamixer --set-volume 0", theme.widgets.volume.channel))
--- 					theme.widgets.volume.update()
--- 				end
--- 			end)
--- 		))
--- 		widget:set_markup(
--- 			markup.fontfg(
--- 				theme.font, theme.font_color, "VOL " .. volume_now.level .. "%"
--- 			)
--- 		)
--- 	end,
--- })
+theme.widgets.volume = widgets.pavol({
+  font = {
+    name = theme.font,
+    color = theme.font_color,
+  },
+  parameters = {
+    volume = "--allow-boost"
+  }
+})
 
 theme.widgets.mem = lain.widget.mem({
 	timeout = 5,
@@ -286,8 +258,8 @@ function theme.at_screen_connect(s)
 			theme.widgets.cpu.widget,
 			theme.separator_space,
 
-			-- theme.widgets.volume.widget,
-			-- theme.separator_space,
+      theme.widgets.volume,
+      theme.separator_space,
 
 			theme.widgets.xkb_indicator.widget,
 			theme.separator_space,

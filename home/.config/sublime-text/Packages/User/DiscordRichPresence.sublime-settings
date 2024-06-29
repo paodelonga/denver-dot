@@ -18,15 +18,15 @@
     //   {folders} - The number of folders open
 
     // The format the presence details (top line) will be in.
-    // "details": "Editing {file} for {project}",
-    "details": "Working on {lang} at {project}",
+    "details": "Editing {file} for {project}",
+    // "details": "Working on {lang} at {project}",
     // "details": "Working on {lang}",
 
     // The format the presence state (bottom line) will be in.
     "state": "Size: {sizehf}",
 
     // The state message when Sublime Text (or the plugin) starts. (NOT FORMATTED)
-    "start_state": "Idle",
+    "start_state": "Taking a nap",
 
     // Whether or not a timestamp for ST's start time should be included.
     "send_start_timestamp": true,
@@ -38,7 +38,7 @@
     "show_elapsed_time": true,
 
     // Whether or not to use the small icon (changes for every language) in the presence.
-    "small_icon": false,
+    "small_icon": true,
 
     // Use the language icon as the big icon, overrides 'small_icon'
     "big_icon": true,

@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
 test -d "$HOME/Videos/Screenrecord/" || mkdir -p "$HOME/Videos/Screenrecord/"
-ffmpeg -f x11grab -video_size $(xdpyinfo | grep 'dimensions:' | awk '{print $2;}') -i $DISPLAY -c:v libx264 -vf format=yuv420p -movflags +faststart -preset ultrafast -framerate 90 -crf 8 $(test -n "$1" && echo "$1" || date "+$HOME/Videos/Screenrecord/video_%Y.%m.%d-%H_%M_%S.mp4")
+ffmpeg -f x11grab -video_size $(xdpyinfo | grep 'dimensions:' | awk '{print $2;}') -i $DISPLAY -c:v libx264 -preset ultrafast -framerate 90 -crf 8 $(test -n "$1" && echo "$1" || date "+$HOME/Videos/Screenrecord/video_%Y.%m.%d-%H_%M_%S.mp4")

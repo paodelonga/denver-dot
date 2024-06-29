@@ -305,17 +305,17 @@ rootKeys = my_table.join(
 		awful.spawn.with_shell('systemctl poweroff')
 	end, { description = "Shutdown", group = "WM" }),
 
-	awful.key({}, "XF86AudioRaiseVolume", function()
-		beautiful.widgets.volume.increase()
-	end, { description = "Raise volume", group = "WM" }),
+  awful.key({}, "XF86AudioRaiseVolume", function()
+    beautiful.widgets.volume.increase()
+  end, { description = "Raise volume", group = "WM" }),
 
-	awful.key({}, "XF86AudioLowerVolume", function()
-		beautiful.widgets.volume.decrease()
-	end, { description = "Lower volume", group = "WM" }),
+  awful.key({}, "XF86AudioLowerVolume", function()
+    beautiful.widgets.volume.decrease()
+  end, { description = "Lower volume", group = "WM" }),
 
-	awful.key({}, "XF86AudioMute", function()
-		beautiful.widgets.volume.toggle_mute()
-	end, { description = "Toggle Mute Volume", group = "WM" }),
+  awful.key({}, "XF86AudioMute", function()
+    beautiful.widgets.volume.toggle_mute()
+  end, { description = "Toggle Mute Volume", group = "WM" }),
 
 	awful.key({cmdmod}, "space", function()
 		beautiful.widgets.xkb_indicator.next_layout()
@@ -350,12 +350,16 @@ rootKeys = my_table.join(
 		awful.spawn("rofi -show window")
 	end, { description = "Show clients", group = "ROFI" }),
 
-	awful.key({ cmdmod, shiftmod }, "Return", function()
+	awful.key({ cmdmod, shiftmod }, "d", function()
 		awful.spawn("rofi -show drun")
 	end, { description = "Application runner", group = "ROFI" }),
 
 	awful.key({ }, "XF86Calculator", function()
-		awful.util.spawn("rofi -show calc")
+		awful.utilu.spawn("rofi -show calc")
+	end, { description = "Calculator", group = "ROFI" }),
+
+	awful.key({ }, "XF86Favorite", function()
+		awful.utilu.spawn("rofi -show calc")
 	end, { description = "Calculator", group = "ROFI" }),
 
 	awful.key({ cmdmod }, ";", function()
@@ -671,12 +675,12 @@ awful.rules.rules = {
 		rule_any = {
 			class = { editor.codium.class, editor.subl.class }
 		},
-		properties = {
-			placement = awful.placement.centered,
-			floating = true,
-			width = 1800,
-			height = 1000,
-		},
+		-- properties = {
+		-- 	placement = awful.placement.centered,
+		-- 	floating = true,
+		-- 	width = 1800,
+		-- 	height = 1000,
+		-- },
 	},
 	{
 		rule_any = {

@@ -50,7 +50,7 @@ local function Widget(arguments)
         pavol.widget:get_children_by_id("wtextbox")[1]:set_markup(
           fontfg(font.name, font.color,
             (string.find(mute, "true") and
-            "MUTED (" .. volume .. "%)" or
+            "[" .. volume .. "%]" or
             "VOL " .. volume .. "%")
           )
         )

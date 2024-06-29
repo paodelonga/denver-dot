@@ -15,11 +15,11 @@ order += "volume master"
 # order += "wireless _first_"
 # order += "ethernet _first_"
 order += "battery all"
-# order += "disk /"
 # order += "load"
-# order += "cpu_usage"
+order += "cpu_usage"
 order += "memory"
-order += "cpu_temperature 0"
+order += "disk /"
+order += "cpu_temperature"
 order += "tztime local"
 
 volume master {
@@ -51,21 +51,21 @@ battery all {
         threshold_type = percentage
 }
 
-# disk "/" {
-#         format = "D: %avail ; %total"
-#         low_threshold = 4
-#         threshold_type = "gbytes_avail"
-# }
+disk "/" {
+        format = "D: %avail ; %total"
+        # low_threshold = 4
+        threshold_type = "gbytes_avail"
+}
 
 # load {
 #         format = "L: %5min ; %15min"
 # }
 
-# cpu_usage {
-#         format = "C: %usage"
-#         max_threshold = 80
-#         format_above_threshold = ">> %usage"
-# }
+cpu_usage {
+        format = "C: %usage"
+        max_threshold = 80
+        format_above_threshold = ">> %usage"
+}
 
 memory {
         format = "M: %used ; %available"

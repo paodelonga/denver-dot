@@ -1,0 +1,193 @@
+{
+  // Automatically marks (captures) Emmet abbreviation when typing text: captured abbreviation
+  // is highlighted with underline. Use Tab key inside captured abbreviation to expand it.
+  // Works in limited syntaxes only, see `abbreviation_scopes` option
+  // Possible values:
+  // – true: enable capturing for both markup and stylesheet abbreviations
+  // – false: completely disable capturing
+  // – "markup" or "stylesheet": enable capturing for either markup or stylesheet abbreviations
+  "auto_mark": true,
+
+  // Preview captured abbreviations, works only if `auto_mark` is enabled.
+  // Possible values:
+  // – true: enable preview for both markup and stylesheet abbreviations
+  // – false: completely disable preview
+  // – "markup" or "stylesheet": enable previews for either markup or stylesheet abbreviations
+    "abbreviation_preview": true,
+
+    // If enabled, all abbreviations in JSX must be prefixed with `<` character.
+    // It allows you to explicitly specify that you are typing abbreviation and
+    // want to expand it with `Tab` key.
+    // Disabling this option will likely break native ST `Tab` key handler like
+    // inserting completions and indenting code
+    "jsx_prefix": true,
+
+  // Scope for marked abbreviation region highlighting
+  "marker_scope": "comment",
+
+  // Editor scope to Emmet syntax mapping
+  "syntax_scopes": {
+    "html": "text.html - source - meta.attribute-with-value.style",
+    "xml": "text.xml - text.xml.xsl",
+    "xsl": "text.xml.xsl",
+    "jsx": "source.js.jsx | source.tsx | source.js | source.jsx",
+    "haml": "source.haml",
+    "jade": "text.jade | source.pyjade",
+    "pug": "text.pug | source.pypug",
+    "slim": "text.slim",
+
+    "css": "source.css | source.postcss | meta.attribute-with-value.style.html string.quoted",
+    "sass": "source.sass",
+    "scss": "source.scss",
+    "less": "source.less",
+    "stylus": "source.stylus",
+    "sss": "source.sss",
+  },
+
+  // List of scopes with inline context
+  "inline_scopes": [
+    "meta.attribute-with-value.style.html"
+  ],
+
+  // List of scope selectors where abbreviation marker should be activated,
+  // e.g. plugin will mark text that user types as abbreviation
+  "abbreviation_scopes": [
+    "(text.html | text.xml) - source - meta - comment",
+    "source.sass - meta.property-value - meta.property-name - string - punctuation - comment",
+    "(source.css | source.scss | source.less | source.postcss | source.stylus) & meta.property-list",
+    "(source.css | source.scss | source.less | source.postcss | source.stylus) - meta.property-value - meta.property-name - string - comment",
+        "(source.tsx | source.js | source.jsx) - comment",
+        "text.html.cfml - meta.tag",
+    // Inline CSS
+    "text.html meta.attribute-with-value.style (string.quoted | source.css)"
+  ],
+
+  // List of scopes where Emmet abbreviations should not be be captured.
+  // If any of the following scopes matches, `abbreviation_scopes`
+  // will be ignored
+  "ignore_scopes": [],
+
+  // Expand Emmet abbreviation with Tab key when in abbreviation marker
+    "tab_expand": true,
+
+    // Expand Emmet abbreviation with Tab key with multiple cursors in editor.
+    // Currently, this mode is less restricted that single-cursor Tab: it doesn’t
+    // require abbreviation to be immediately typed and expanded by user, it may
+    // expand existing abbreviation.
+    // As a side-effect, you may not be able to insert tab character after words
+    // if this option is enabled
+    "multicursor_tab": true,
+
+  // Emmet syntaxes (keys of "syntax_scopes" dictionary) where Tab expander
+  // is limited to known snippets only.
+  // For example, when you type `di`, pressing Tab key will try to match default
+  // Sublime Text snippet since `di` is neither known tag nor known Emmet snippet.
+  // But `div` will be expanded via Emmet since it’s a known tag.
+  // However, typing `di.sample` will be expanded via Emmet as well since it
+  // contains special operator like `.`
+  // Known snippets are:
+  // * any valid HTML5 tag
+  // * any predefined Emmet snippet
+  // * upper-cased word (JSX, Svelte components)
+  // * words with dash (Vue, Web Components)
+    "known_snippets_only": ["html"],
+
+    // Automatically insert `class` attribute when typing `.` inside open tag
+    // and `id` attribute when typing `#`
+    "auto_id_class": false,
+
+  // Display open tag preview next to closing tag when caret is inside it
+  // and open tag is not currently visible
+  "tag_preview": false,
+
+  // Document size limit for `tag_preview` option: display preview only if current
+  // document size is less that given one. Setting larger value will degrade
+  // performance of caret movement. Set value to 0 to disable limit
+  // Future versions of Emmet plugin might work better with large documents.
+  "tag_preview_size_limit": 51250,
+
+  // The maximum file size where Emmet will capture HTML tag context for abbreviation.
+  // Tag context is used for resolving implicit tag names in abbreviation
+  // (e.g. `.item` should expand to `<li class="item">` inside `<ul>` tag), but
+  // requires full document scan
+  "context_size_limit": 102400,
+
+  // The maximum selection size for instant preview of Wrap with Abbreviation action.
+  "wrap_size_preview": 10240,
+
+  // Override default Toggle Comment with Emmet variation for specified syntax scopes
+  // defined in `comment_scopes`. When enabled, if you run Toggle Comment action
+  // without selecting any text, Emmet will try to find matching HTML tag pair
+  // for current caret position and comment entire tag instead of current line.
+  // If this option is disabled, you can create keyboard shortcut for
+  // `toggle_comment` action.
+  "toggle_comment": true,
+
+  "comment_scopes": [
+    "text.html - source",
+    "text.xml",
+    "source.css",
+    "source.scss",
+    "source.less"
+  ],
+
+  // Enable closing tag commenting after expanding abbreviations, e.g.
+  // <div class="foo">
+  // </div><!-- .foo -->
+  "comment": false,
+
+  // Outputs everything between `[` and `]` only if specified attribute name
+  // (written in UPPERCASE) exists in element. Attribute name is replaced with
+  // actual value. Use `\n` to add a newline.
+  "comment_template": "\n<!-- /[#ID][.CLASS] -->",
+
+  // Max size of file to convert to data:URL. Set to 0 to disable limit
+  "max_data_url": 20480,
+
+  // Output code style
+  // Defines how self-closing tags (like `<img>` or `<br>`) and boolean attributes
+  // (like `disabled`) will look in generated code.
+  // Possible values are "html", "xhtml", "xml"
+  "markup_style": "html",
+
+  // Attribute value quotes, "double" or "single"
+  "attribute_quotes": "double",
+
+  // Enable BEM support.
+  // When enabled, Emmet will treat class names starting with `-`` as element
+  // and with `_` as modifier in BEM (https://en.bem.info) notation.
+  // These class names will inherit block name from current or ancestor element.
+  // For example, the abbreviation `ul.nav.nav_secondary>li.nav__item` can be
+  // shortened to `ul.nav._secondary>li.-item` with this option enabled.
+  "bem": false,
+
+  // When enabled, tries to shorten generated HEX color values for CSS abbreviations.
+  // For example, `c#0` abbreviation can be expanded either to `color: #000;`
+  // or `color: #000000;`
+  "short_hex": true,
+
+  // Additional CSS styles to be embedded into Emmet previews and phantoms
+  "popup_css": "",
+
+  // Config for Emmet
+  // See `GlobalConfig` interface for supported properties: https://github.com/emmetio/emmet/blob/master/src/config.ts
+  // Example:
+  // "config": {
+  //  "markup": {
+  //    "snippets": {
+  //      "foo": "foo.bar>baz"
+  //    },
+  //    "options": {
+  //      "output.selfClosingStyle": "xhtml"
+  //    }
+  //  }
+  // }
+  "config": {},
+
+  // Unique ID editor instance, used for upcoming online Emmet config.
+  // Please do not edit
+  "uid": "8dde326f-f05e-464e-862e-32fb347439a6",
+
+  // Enable anonymous event tracking, used to improve Emmet experience
+  "telemetry": false,
+}

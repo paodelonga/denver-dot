@@ -4,7 +4,6 @@
 	{ "keys": ["ctrl+f", "alt+f"], "command": "toggle_menu" },
   { "keys": ["ctrl+b"], "command": "build" },
 
-
   // PKG: Terminus
   { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
     {
@@ -14,6 +13,9 @@
         }
     },
 
+  // PKG: AdvancedNewFile
+  { "keys": ["alt+n"], "command": "advanced_new_file_new"},
+  { "keys": ["tab"], "command": "insert", "args": { "characters": "\t" }, "context": [{ "key": "setting.anf_panel" }]},
 
   // Tabs
   { "keys": ["ctrl+tab"], "command": "next_view" },
@@ -37,7 +39,6 @@
   { "keys": ["ctrl+alt+pageup"], "command": "move_to_neighboring_group", "args": {"forward": false } },
   { "keys": ["ctrl+alt+pagedown"], "command": "move_to_neighboring_group", "args": {"forward": true }  },
 
-
   // Motions
   { "keys": ["home"], "command": "move_to", "args": { "to": "bol", "extend": false } },
   { "keys": ["end"], "command": "move_to", "args": { "to": "eol", "extend": false } },
@@ -52,6 +53,5 @@
   { "keys": ["ctrl+4", "ctrl+down"], "command": "scroll_lines", "args": { "amount": -4.0 } },
 
   { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
-  { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
-
+  { "keys": ["ctrl+shift+down"], "command": "swap_line_down" }
  ]

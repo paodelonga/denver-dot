@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+paru -Q | cut -d ' ' -f 1 > "currently_all.list"
+paru -Qe | cut -d ' ' -f 1 > "currently_explicitly.list"
+paru -Qe | cut -d ' ' -f 1 >> "previous_explicitly.list" | cat "previous_explicitly.list" | sort -u | micro
