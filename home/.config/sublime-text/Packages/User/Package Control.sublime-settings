@@ -3,6 +3,7 @@
 	"in_process_packages":
 	[
 		"LSP",
+		"Terminus",
 	],
 	"installed_packages":
 	[

@@ -16,7 +16,7 @@ order += "volume master"
 # order += "ethernet _first_"
 order += "battery all"
 # order += "load"
-order += "cpu_usage"
+# order += "cpu_usage"
 order += "memory"
 order += "disk /"
 order += "cpu_temperature"
@@ -61,11 +61,11 @@ disk "/" {
 #         format = "L: %5min ; %15min"
 # }
 
-cpu_usage {
-        format = "C: %usage"
-        max_threshold = 80
-        format_above_threshold = ">> %usage"
-}
+# cpu_usage {
+#         format = "C: %usage"
+#         max_threshold = 80
+#         format_above_threshold = ">> %usage"
+# }
 
 memory {
         format = "M: %used ; %available"

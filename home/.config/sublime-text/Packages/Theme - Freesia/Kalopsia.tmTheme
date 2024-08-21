@@ -822,6 +822,17 @@
 				<string>#929292FF</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_ABB8C3FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#ABB8C3FF</string>
+				<key>foreground</key>
+				<string>#353535FF</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>7033459A-498B-48B7-9691-B4100E2AB2E2</string>

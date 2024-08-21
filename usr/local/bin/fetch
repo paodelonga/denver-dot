@@ -8,12 +8,13 @@ reset='\033[0;0m'
  # ${accent} :${reset} Alacritty
 echo -e """
  ${accent} :${reset} $PRETTY_NAME $(uname -m)
+ ${accent} :${reset} $(uname -r)
  ${accent} :${reset} $USER@$(hostname -f)
  ${accent}$ :${reset} $SHELL
  ${accent}󰏖 :${reset} $(paru -Qe | wc -l) (extra & aur)
+ ${accent}󱛁 :${reset} $(hostname -i | cut -d ' ' -f 1)
  ${accent}󱧥 :${reset} $(uptime -p)
 """
- # ${accent}󱛁 :${reset} $(hostname -i | cut -d ' ' -f 1)
- # ${accent} :${reset} $(uname -r)
- # ${accent} :${reset} $(echo $DISPLAY)
- # ${accent} :${reset} Awesome WM
+
+# ${accent} :${reset} $(echo $DISPLAY)
+# ${accent} :${reset} Awesome WM

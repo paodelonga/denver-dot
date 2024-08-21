@@ -42,6 +42,8 @@ alias crev='date "+%A, %d %B, %Y - %T"'
 alias csrev='date "+%d/%m/%Y - %T"'
 alias cbkp='date "+%Y.%m.%d-%H_%M_%S"'
 
+alias bt="cat /sys/class/power_supply/*/{capacity,status}"
+
 alias c="clear && greeting"
 alias suuid4="uuidgen -r | cut -d '-' -f -1"
 alias src="omf reload"

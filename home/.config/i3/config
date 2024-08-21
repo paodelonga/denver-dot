@@ -2,6 +2,9 @@ workspace_layout tabbed
 default_border pixel 2
 focus_follows_mouse no
 
+gaps inner 13px
+smart_gaps off
+
 # Define names for modifiers keys to avoid repeating in multiple places
 set $mod Mod4
 
@@ -16,17 +19,29 @@ font pango:Maple Mono NF 9
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- boxlock
 
+exec_always --no-startup-id picom --daemon
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
+exec_always --no-startup-id /home/paodelonga/.fehbg
 
 bindsym --release $mod+Home exec boxlock
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id brightnessctl set +15%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id brightnessctl set 15%-
+
+bindsym XF86Display exec --no-startup-id brightnessctl set 0%
+bindsym Shift+XF86Display exec --no-startup-id brightnessctl set 100%
 
 bindsym Print --release exec --no-startup-id prtsl
 
@@ -92,7 +107,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-bindsym button2 floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -169,8 +183,8 @@ bindsym $mod+F11 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. D
 # bindsym $mod+Shift+F11 exec "shutdown -P"
 
 set $mode_resize "RESIZE"
-set $mode_launch "LAUNCHER"
-set $mode_launch_ide "LAUNCHER: IDE"
+set $mode_launch "LAUNCHER [I: IDE]"
+set $mode_launch_ide "LAUNCHER [IDE]"
 
 # resize window (you can also use the mouse for that)
 mode $mode_resize {
@@ -197,7 +211,6 @@ mode $mode_launch_ide {
 }
 
 mode $mode_launch {
-        # back to normal
         bindsym Escape mode "default"
         bindsym space mode "default"
         bindsym $mod+Ctrl+d mode "default"
@@ -218,7 +231,7 @@ bar {
         position top
         font pango:Geist Mono 8
         status_command i3status
-        separator_symbol " ! "
+        separator_symbol " | "
 }
 
 

@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ $1 == --daemon ]]; then
+  until pgrep gvfs >/dev/null; do
+    sleep 1
+  done
+  exec /sbin/Thunar "$@"
+else
+  exec /sbin/Thunar "$@"
+fi

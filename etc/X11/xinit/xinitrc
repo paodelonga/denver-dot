@@ -11,8 +11,8 @@ if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
 
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
+if [ -f "$sysmodmap" ]; then
+    xmodmap "$sysmodmap"
 fi
 
 if [ -f "$userresources" ]; then
@@ -38,4 +38,6 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 # exec i3
-exec awesome
+# exec startxfce4
+# exec dbus-run-session gnome-session
+# exec awesome
