@@ -1,0 +1,80 @@
+
+set $mode_resize "RESIZE [ H: +5 ⇆  | K: +5 ⇅ | J: -5 ⇆  | L: -5 ⇅  ]"
+set $mode_launch "LAUNCHER [ T: TERM ] [ W: WEB ] [ I: IDE ] [ F: FILE ]"
+set $mode_launch_web "WEB [ L: LIBREWOLF | F: FIREFOX | Z: ZEN | C: CHROMIUM]"
+set $mode_launch_ide "IDE [ S: SUBLIME | V: VSCODIUM | J: IDEA ] "
+set $mode_launch_file "FILE [ N: NAUTILUS | T: THUNAR | M: MIDNIGHT]"
+
+mode $mode_resize {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym h resize grow width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym l resize shrink width 5 px or 5 ppt
+
+        bindsym Left resize grow width 5 px or 5 ppt
+        bindsym Up resize grow height 5 px or 5 ppt
+        bindsym Down resize shrink height 5 px or 5 ppt
+        bindsym Right resize shrink width 5 px or 5 ppt
+
+        bindsym Shift+h resize grow width 10 px or 10 ppt
+        bindsym Shift+k resize grow height 10 px or 10 ppt
+        bindsym Shift+j resize shrink height 10 px or 10 ppt
+        bindsym Shift+l resize shrink width 10 px or 10 ppt
+
+        bindsym Shift+Left resize grow width 10 px or 10 ppt
+        bindsym Shift+Up resize grow height 10 px or 10 ppt
+        bindsym Shift+Down resize shrink height 10 px or 10 ppt
+        bindsym Shift+Right resize shrink width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+        bindsym r mode "default"
+}
+
+mode $mode_launch_web {
+        bindsym Escape mode $mode_launch
+        bindsym space mode $mode_launch
+        bindsym w mode $mode_launch
+
+        bindsym c exec --no-startup-id librewolf; mode "default"
+        bindsym z exec --no-startup-id firefox; mode "default"
+        bindsym f exec --no-startup-id zen-browser; mode "default"
+        bindsym l exec --no-startup-id chromium; mode "default"
+}
+
+mode $mode_launch_ide {
+        bindsym Escape mode $mode_launch
+        bindsym space mode $mode_launch
+        bindsym i mode $mode_launch
+
+        bindsym s exec --no-startup-id subl; mode "default"
+        bindsym v exec --no-startup-id vscodium; mode "default"
+        bindsym j exec --no-startup-id intellij-idea-ultimate-edition; mode "default"
+}
+
+mode $mode_launch_file {
+        bindsym Escape mode $mode_launch
+        bindsym space mode $mode_launch
+        bindsym f mode $mode_launch
+
+        bindsym n exec --no-startup-id nautilus; mode "default"
+        bindsym t exec --no-startup-id thunar; mode "default"
+        bindsym m exec --no-startup-id mc; mode "default"
+}
+
+mode $mode_launch {
+        bindsym Escape mode "default"
+        bindsym space mode "default"
+        bindsym $mod+Ctrl+d mode "default"
+
+        bindsym t exec --no-startup-id alacritty; mode "default"
+        bindsym w mode $mode_launch_web
+        bindsym i mode $mode_launch_ide
+        bindsym f mode $mode_launch_file
+}
+
+bindsym $mod+r mode $mode_resize
+bindsym $mod+Ctrl+d mode $mode_launch
