@@ -4,14 +4,12 @@ default_border pixel 2
 default_floating_border pixel 2
 focus_follows_mouse no
 
-gaps inner 9px
+# gaps inner 9px
 smart_gaps off
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Maple Mono NF 9
+font pango:Pragmasevka 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -74,9 +72,6 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+Shift+v exec clipmenu -i -fn "Maple Mono NF":size=9
 #===
-
-# bindsym $mod+Shift+w exec --no-startup-id firefox
-# bindsym $mod+Shift+a exec --no-startup-id thunar
 
 # change focus
 bindsym $mod+h focus left
@@ -179,7 +174,7 @@ assign [class="vivaldi"] → number $ws1
 assign [class="zen-browser"] → number $ws1
 assign [class="chromium"] → number $ws1
 
-assign [class="Alacritty"] → number $ws2
+# assign [class="Alacritty"] → number $ws2
 
 assign [class="vscode"] → number $ws2
 assign [class="vscodium"] → number $ws2
@@ -249,10 +244,10 @@ mode $mode_launch_web {
         bindsym space mode $mode_launch
         bindsym w mode $mode_launch
 
-        bindsym c exec --no-startup-id librewolf; mode "default"
-        bindsym z exec --no-startup-id firefox; mode "default"
-        bindsym f exec --no-startup-id zen-browser; mode "default"
-        bindsym l exec --no-startup-id chromium; mode "default"
+        bindsym l exec --no-startup-id librewolf; mode "default"
+        bindsym f exec --no-startup-id firefox; mode "default"
+        bindsym z exec --no-startup-id zen-browser; mode "default"
+        bindsym c exec --no-startup-id chromium; mode "default"
 }
 
 mode $mode_launch_ide {
@@ -291,9 +286,31 @@ bindsym $mod+Ctrl+d mode $mode_launch
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+for_window [title="Picture-in-Picture"] sticky enable
+
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #424242 #1f1f1f #d6d6d6 #2e9ef4   #5f676a
+client.focused_inactive #191919 #191919 #d6d6d6 #484e50   #262626
+client.unfocused        #191919 #191919 #888888 #292d2e   #222222
+client.urgent           #191919 #404040 #d6d6d6 #900000   #900000
+client.placeholder      #000000 #0c0c0c #d6d6d6 #000000   #0c0c0c
+
 bar {
         position top
-        font pango:Geist Mono 8
+        font pango:Pragmasevka 10
         status_command i3status
         separator_symbol " | "
+
+        colors {
+                background #191919
+                separator #666666
+                focused_workspace  #191919 #1f1f1f #d6d6d6
+                inactive_workspace #191919 #191919 #595959
+                urgent_workspace   #191919 #995454 #d6d6d6
+        }
+
+        workspace_min_width 30
+        padding 3px 8px 3px 8px
 }

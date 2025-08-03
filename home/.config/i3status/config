@@ -9,25 +9,31 @@
 general {
         colors = true
         interval = 1
+        markup = pango
+
+        color_good = "#a6a6a6"
+        color_bad = "#a64242"
+        color_degraded = "#d9e650"
 }
 order += "volume master"
 # order += "ipv6"
 order += "wireless _first_"
-order += "ethernet _first_"
+# order += "ethernet _first_"
 order += "battery all"
 # order += "load"
-order += "cpu_usage"
+# order += "cpu_usage"
 order += "memory"
 order += "disk /"
 order += "cpu_temperature 0"
 order += "tztime local"
 
 volume master {
-        format = "V: %volume"
-        format_muted = "V: [%volume]"
+        format = "<span color='#a6a6a6'>V: %volume</span>"
+        format_muted = "<span color='#a6a6a6'>V: [%volume]</span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
+        color_good = "#a6a6a6"
 }
 
 wireless _first_ {
@@ -36,20 +42,13 @@ wireless _first_ {
         format_quality = "%02d%s"
 }
 
-wireless _first_ {
-        format_up = "W: %essid %ip ; %quality %bitrate %frequency"
-        format_down = "W: DOWN"
-        format_quality = "%02d%s"
-}
-
-
-ethernet _first_ {
-        format_up = "E: %ip ; %speed"
-        format_down = "E: DOWN"
-}
+# ethernet _first_ {
+#         format_up = "E: %ip ; %speed"
+#         format_down = "E: DOWN"
+# }
 
 battery all {
-        format = "B: %status %percentage %consumption ; %remaining %emptytime"
+        format = "<span color='#a6a6a6'>B: %status %percentage %consumption %remaining %emptytime</span>"
         status_chr = "CHT"
         status_bat = "BAT"
         status_unk = "UNK"
@@ -58,37 +57,37 @@ battery all {
         threshold_type = percentage
 }
 
-disk "/" {
-        format = "D: %avail ; %total"
-        low_threshold = 2
-        threshold_type = "gbytes_avail"
-}
+# disk "/" {
+#         format = "<span color='#a6a6a6'>D: %avail ; %total</span>"
+#         low_threshold = 2
+#         threshold_type = "gbytes_avail"
+# }
 
 # load {
 #         format = "L: 1min %5min %15min"
 # }
 
-cpu_usage {
-        format = "C: %usage"
-        max_threshold = 80
-        degraded_threshold = 25
-        format_above_threshold = "C: >> %usage"
-        format_above_degraded_threshold = "C: << %usage"
-}
+# cpu_usage {
+#         format = "<span color='#a6a6a6'>C: %usage</span>"
+#         max_threshold = 80
+#         degraded_threshold = 25
+#         format_above_threshold = "<span>C: &gt&gt %usage</span>"
+#         format_above_degraded_threshold = "<span>C: &lt&lt %usage</span>"
+# }
 
 memory {
-        format = "M: %used ; %total"
+        format = "<span color='#a6a6a6'>M: %used ; %total</span>"
         threshold_degraded = "800M"
         threshold_critical = "400M"
-        format_degraded = "%available"
+        format_degraded = "M: %available"
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
+        format = "<span color='#a6a6a6'>T: %degrees °C</span>"
         max_threshold = 60
-        format_above_threshold = ">> %degrees °C"
+        format_above_threshold = "<< %degrees °C"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "<span color='#a6a6a6'>%Y-%m-%d %H:%M:%S</span>"
 }
