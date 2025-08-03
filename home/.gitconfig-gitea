@@ -1,0 +1,16 @@
+[user]
+  name = paodelonga
+  email = paodelonga@proton.me
+  signingkey = 1051DFE16AA3D496
+
+[credential "http://gitea.vrykolakas.local/"]
+  helper = store
+
+[gpg]
+  program = gpg
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true

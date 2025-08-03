@@ -1,0 +1,19 @@
+[user]
+	name = paodelonga
+	email = paodelonga@proton.me
+	signingkey = 24CD859B709A1403
+
+[credential "https://codeberg.org/"]
+	helper = store
+
+[url "git@codeberg.org:"]
+	insteadOf = "https://codeberg.org"
+
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true

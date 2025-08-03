@@ -1,0 +1,19 @@
+[user]
+  name = paodelonga
+  email = paodelonga@proton.me
+  signingkey = 75444CBCCAEC74CF
+
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+  helper = !/usr/bin/gh auth git-credential
+
+[gpg]
+  program = gpg
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true

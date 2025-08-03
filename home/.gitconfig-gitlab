@@ -1,0 +1,19 @@
+[user]
+  name = paodelonga
+  email = paodelonga@proton.me
+  signingkey = 1051DFE16AA3D496
+
+[credential "https://gitlab.com"]
+  helper = !/usr/bin/glab auth git-credential
+
+[url "git@gitlab.com:"]
+  insteadOf = "https://gitlab.com"
+
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+
+[tag]
+  gpgsign = true

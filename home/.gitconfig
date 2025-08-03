@@ -1,61 +1,64 @@
-[user]
-	name = paodelonga
-	email = 72471292+paodelonga@users.noreply.github.com
-	signingkey = 0C3F9B4AADC8FAA6
+[includeIf "gitdir:repositories/gitlab/"]
+	path = ~/.gitconfig-gitlab
+
+[includeIf "gitdir:repositories/github/"]
+	path = ~/.gitconfig-github
+
+[includeIf "gitdir:repositories/codeberg/"]
+	path = ~/.gitconfig-codeberg
+
+[includeIf "gitdir:repositories/gitea/"]
+	path = ~/.gitconfig-gitea
+
+[includeIf "gitdir:Documents/Obsidian/"]
+	path = ~/.gitconfig-obsidian
 
 [init]
 	defaultBranch = main
-
-[gpg]
-	program = gpg
-
-[commit]
-	gpgsign = true
 
 [core]
 	editor = micro
 	symlinks = true
 	autocrlf = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
 	dsf = diff
 	patch = !git --no-pager diff --no-color
-	gst = !git status
-	ga = !git add
-	gai = !git add -i
-	gae = !git add -e
-	gap = !git add -p
-	gdf = !git diff
-	gdsf = !git dsf
-	gps = !git push
-	gpl = !git pull
+	st = !git status
+	a = !git add
+	ai = !git add -i
+	ae = !git add -e
+	ap = !git add -p
+	df = !git diff
+	ps = !git push
+	pl = !git pull
 
-	gb = !git branch
-	gba = !git branch --all
-	gbl = !git branch --list
-	gbc = !git branch --copy
-	gbm = !git branch --move
-	gbd = !git branch --delete
-	gbnmp = !echo "<group>.<subject>.<$(uuidgen -r | cut -d '-' -f -1)|commit_tag>.[username]"
+	b = !git branch
+	ba = !git branch --all
+	bc = !git branch --copy
+	bm = !git branch --move
+	bd = !git branch --delete
+	bnc = !echo "<group>.<subject>.<$(uuidgen -r | cut -d '-' -f -1)|commit_tag>.[username]"
 
-	gf = !git fetch
-	gfa = !git fetch --all
-	gfp = !git fetch --prune
-	gfap = !git fetch --all --prune
+	f = !git fetch
+	fa = !git fetch --all
+	fp = !git fetch --prune
+	fap = !git fetch --all --prune
 
-	gc = !git commit
-	gcm = !git commit -m
+	c = !git commit --signoff
+	cm = !git commit --signoff -m
 
-	gchku = !git reset HEAD~1 --mixed
-	gchkc = !git commit -m 'checkpoint: $(uuidgen -r)'
+	chku = !git reset HEAD~1 --mixed
+	chkc = !git commit --signoff -m 'checkpoint: $(uuidgen -r)'
 
-	gsw = !git switch
-	gswc = !git switch -c
-	gswo = !git switch --orphan
+	sw = !git switch
+	swc = !git switch -c
+	swo = !git switch --orphan
 
+	lg = log '--pretty=format:"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]" --abbrev-commit -30'
 
-[pager]
-	dsf = diff-so-fancy | less --tabs=4 -RFX
+	commit = commit --signoff
 
 [interactive]
 	diffFilter = diff-so-fancy --patch
@@ -93,13 +96,8 @@
 	new = green bold
 	whitespace = red reverse
 
-[credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
-
-[credential "https://gist.github.com"]
-	helper = !/usr/bin/gh auth git-credential
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+	required = true
